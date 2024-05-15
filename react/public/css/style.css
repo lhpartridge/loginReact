@@ -10,5 +10,14 @@ body {
 }
 
 .user-div {
+    margin: 5px;
+    padding: 5px 10px;
     font-size: 1em;
+    background-color: rgb(219, 206, 189);
+    border: 2px solid rgb(255, 184, 92);
+    border-radius: 5%;
+}
+
+.access-text {
+    font-size: 1.4em;
 }

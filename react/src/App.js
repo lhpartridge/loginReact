@@ -34,17 +34,26 @@ const App =()=> {
         })
     }
 
-    const handleSubmit=()=> {
-        axios({
-            method: 'post', 
-            url: 'http://localhost:3005/api/user/create',
-            data: formData
-        })
+    const handleSubmit=(event)=> {
+        event.preventDefault()
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        // let result = regex.text
+
+        if (regex.test(formData.password) === false) {
+            alert('Invalid password. \nPassword must contain at least 8 characters, including: \n one upper case letter, \n one lowercase letter, \n one number and \n one special character')
+        } else {
+            axios({
+                method: 'post', 
+                url: 'http://localhost:3005/api/user/create',
+                data: formData
+            })
+        }
+
     }
     
     return(
         <>
-             <Header />
+             <Header users={users}/>
              <Form 
                 formData={formData} 
                 handleChange={handleChange} 

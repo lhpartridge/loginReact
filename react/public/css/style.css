@@ -1,0 +1,14 @@
+:root {
+
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+.user-div {
+    font-size: 1em;
+}
